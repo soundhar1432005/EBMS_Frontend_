@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
+import { API_URL } from '../config/api'
 import './ProviderSignUp.css'
 
 function ProviderSignUp() {
@@ -89,7 +90,7 @@ function ProviderSignUp() {
         submitData.append('shop_logo', formData.shop_logo)
       }
 
-      const response = await fetch('http://localhost:5000/api/auth/register/provider', {
+      const response = await fetch(`${API_URL}/api/auth/register/provider`, {
         method: 'POST',
         body: submitData,
       })

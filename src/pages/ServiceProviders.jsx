@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { API_URL } from '../config/api'
 import './ServiceProviders.css'
 
 function ServiceProviders() {
@@ -31,7 +32,7 @@ function ServiceProviders() {
 
   const fetchProviders = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/providers/approved')
+      const response = await fetch(`${API_URL}/api/providers/approved`)
       const data = await response.json()
       setProviders(data)
       setFilteredProviders(data)
@@ -85,7 +86,7 @@ function ServiceProviders() {
             <div key={provider._id} className="provider-card">
               {provider.shop_logo && (
                 <div className="provider-logo">
-                  <img src={`http://localhost:5000${provider.shop_logo}`} alt={provider.business_name} />
+                  <img src={`${API_URL}${provider.shop_logo}`} alt={provider.business_name} />
                 </div>
               )}
               
