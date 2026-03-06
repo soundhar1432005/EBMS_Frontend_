@@ -1,0 +1,159 @@
+.signup-selection-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0a0a0a;
+  padding: 2rem;
+  position: relative;
+}
+
+.signup-selection-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+  filter: brightness(0.6);
+  z-index: 0;
+}
+
+.selection-content {
+  max-width: 750px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.selection-content h1 {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 0.35rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+}
+
+.selection-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.selection-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.75rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.selection-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.selection-card h2 {
+  font-size: 1.5rem;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.selection-card > p {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-bottom: 1.25rem;
+}
+
+.card-features {
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0;
+}
+
+.card-features li {
+  padding: 0.5rem 0;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.card-features li:before {
+  content: "✓";
+  color: #10b981;
+  font-weight: bold;
+  margin-right: 0.625rem;
+  font-size: 1rem;
+}
+
+.selection-btn {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.client-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.client-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(102, 126, 234, 0.4);
+}
+
+.provider-btn {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+}
+
+.provider-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(245, 87, 108, 0.4);
+}
+
+.login-link {
+  color: white;
+  font-size: 0.875rem;
+  margin-top: 1.5rem;
+}
+
+.login-link a {
+  color: white;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .selection-content h1 {
+    font-size: 1.65rem;
+  }
+  
+  .selection-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .selection-card {
+    padding: 1.5rem;
+  }
+}
